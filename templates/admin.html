@@ -40,40 +40,41 @@
                             <a class="nav-link" href="login.html" id="ingresar">Ingresar</a>
                         </li>
                     </ul>
-                    <i class="fa-solid fa-cart-shopping" id="verCarrito" data-bs-toggle="modal" data-bs-target="#carritoModal" id="carrito"></i>
                 </div>
             </div>
         </nav>
     </header>
 
-    <!-- Modal del Carrito -->
-    <div class="modal fade" id="carritoModal" tabindex="-1" aria-labelledby="carritoModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="carritoModalLabel">Carrito</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body carrito">
-                    <!-- Aquí se insertará el contenido del carrito -->
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary">Comprar</button>
-                </div>
+    <div class="modal fade" id="editProductModal" tabindex="-1" aria-labelledby="editProductModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="editProductModalLabel">Editar Producto</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-        </div>
-    </div>
-
-    <!-- Slider -->
-    <div id="carouselExampleIndicators" class="carousel slide">
-        <div class="carousel-item">
-            <div class="carousel-caption col-lg-4 col-md-6 col-sm-12">
-                <h2>SAHARD-COMPONENTS</h2>
-                <span>Innovación y tecnología de punta</span>
+            <div class="modal-body">
+              <form id="editProductForm">
+                <div class="mb-3">
+                  <label for="productName" class="form-label">Nombre del producto</label>
+                  <input type="text" class="form-control" id="productName">
+                </div>
+                <div class="mb-3">
+                  <label for="productDescription" class="form-label">Descripción del producto</label>
+                  <input type="text" class="form-control" id="productDescription">
+                </div>
+                <div class="mb-3">
+                  <label for="productPrice" class="form-label">Precio del producto</label>
+                  <input type="number" class="form-control" id="productPrice">
+                </div>
+              </form>
             </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary" id="saveChanges">Guardar cambios</button>
+            </div>
+          </div>
         </div>
-    </div>
+      </div>
 
     <main>
         <div class="container mt-5">
@@ -91,7 +92,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="/static/js/index.js"></script>
-    <script src="/static/js/carrito.js"></script>
+    
+    <script src="/static/js/admin.js"></script>
 </body>
 </html>

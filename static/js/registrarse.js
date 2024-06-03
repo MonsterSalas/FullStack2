@@ -45,7 +45,7 @@ $(document).ready(function() {
         })
         .then(() => {
             Swal.close();
-            window.location.href = 'Login.html'; // Redirect to the URL returned from the server
+            window.location.href = 'Login.html'; 
           });;
     });
 });

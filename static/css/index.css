@@ -64,14 +64,40 @@ footer {
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
+    padding: 20px;
+    position: relative;
 }
+
 .carousel-caption {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px; /* Añadir padding para asegurar que el texto no se salga */
+    width: 90%; /* Ajustar el ancho para pantallas pequeñas */
+    box-sizing: border-box; /* Asegurar que el padding no aumente el tamaño total del contenedor */
 }
+
+/* Reducir el tamaño del texto en pantallas pequeñas */
+@media (max-width: 576px) {
+    .carousel-caption h2 {
+        font-size: 1.5rem;
+    }
+
+    .carousel-caption span {
+        font-size: 1rem;
+    }
+}
+
+/* Ajustes adicionales para mejorar la responsividad */
+@media (max-width: 768px) {
+    .carousel-caption h2 {
+        font-size: 2rem;
+    }
+
+    .carousel-caption span {
+        font-size: 1.25rem;
+    }

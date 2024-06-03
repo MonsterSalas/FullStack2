@@ -32,8 +32,16 @@ $(document).ready(function() {
             showConfirmButton: false
         })
         .then(() => {
-            Swal.close();
-            window.location.href = 'Index.html'; // Redirect to the URL returned from the server
-          });;;
+            if(usuario.email === 'admin@admin.com')
+            {
+                Swal.close();
+                window.location.href = 'admin.html';
+            }
+            else{
+                Swal.close();
+                window.location.href = 'Index.html'; 
+
+            }
+          });
     });
 });

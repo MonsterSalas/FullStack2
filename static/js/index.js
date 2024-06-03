@@ -1,28 +1,39 @@
 $(document).ready(function() {
     const estaLogueado = localStorage.getItem('estaLogueado');
-
     if (estaLogueado === 'true') {
         $('#ingresar').text('Cerrar sesión').attr('href', 'index.html');
     } else {
         $('#ingresar').text('Ingresar').attr('href', 'login.html');
     }
-    
     const $sessionClose = $('#ingresar');
     $sessionClose.click(function() {
         localStorage.setItem('estaLogueado', 'false');
+        localStorage.deleteItem('carrito')
     });
-    
-    const productos = [
+
+    var productos = [
         {
             nombre: 'ASUS Prime H510M-E',
             descripcion: 'Placa Madre ASUS Prime H510M-E',
             imagen: '/static/img/motherboard.jpg',
             precio: '100'
+        },
+        {
+            nombre: 'Samsung Odyssey Neo G9',
+            descripcion: 'Tela Curva Super Ultrawide, 240Hz, FreeSync',
+            imagen: '/static/img/monitor.jpeg',
+            precio: '200'
         }
     ];
     
-    const $row = $('.row');
+    // Convertir el array de productos a una cadena JSON
+    const productosJSON = JSON.stringify(productos);
     
+    // Guardar la cadena JSON en localStorage
+    localStorage.setItem('productos', productosJSON);
+    
+
+    const $row = $('.row');
     productos.forEach(function(producto) {
         const $col = $('<div>').addClass('col-lg-4 col-md-6 col-sm-12');
         const $card = $('<div>').addClass('product-card');
